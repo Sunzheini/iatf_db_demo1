@@ -6,7 +6,6 @@ IATF16949 DATABASE DEMO
 from tkinter import *
 from tkinter import colorchooser, messagebox, filedialog, ttk
 import sqlite3
-import time
 
 
 # ToDo class process step
@@ -142,13 +141,18 @@ def create_process_step():
     process_evidences = Label(
         root,
         text=evidences,
-        width=18,
+        width=15,
         height=2,
         bg='white',
         borderwidth=2,
         relief="ridge",
     )
     process_evidences.grid(row=number_of_process_steps, column=3)
+
+    # ToDo: finish this - add canvas to row
+    canvas = Canvas(root, height=25, width=25, bg='white')
+    canvas.create_rectangle(5, 5, 20, 20, fill='white', width=2)  # start x, y, end x, y
+    canvas.grid(row=number_of_process_steps, column=4)
 
     c.execute("INSERT INTO iatf VALUES (:process_step_number, :process_name, :process_responsible, :process_evidences)",
               {
@@ -252,7 +256,8 @@ menubar.add_cascade(label='File', menu=fileMenu)       # dropdown menu
 fileMenu.add_command(label='Open', command=open_file_menu)
 fileMenu.add_command(label='Save', command=save_file_menu)
 fileMenu.add_separator()                               # separator
-fileMenu.add_command(label='Exit', command=quit)
+#fileMenu.add_command(label='Exit', command=quit)   # 'quit' not working with pyinstaller
+fileMenu.add_command(label='Exit', command=save_file_menu)
 
 # 'Edit'
 editMenu = Menu(menubar, tearoff=False)
