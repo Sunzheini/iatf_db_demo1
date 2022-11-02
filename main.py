@@ -2,15 +2,21 @@
 IATF16949 DATABASE DEMO
 
 31.10.2022
+
+ToDo: направих тест и грид работи във фрейм
+ToDo: дали фогурите от флоучарта да са картинка наслагани (compound) в/у текста в гутийката
 """
 from tkinter import *
 from tkinter import colorchooser, messagebox, filedialog, ttk
 import sqlite3
 
-
 # ToDo class process step
 # ToDo first store process steps in a dictionary then to database, so you can refer to process steps
 # ToDo optimise program
+
+
+# frame1.pack_propagate = False     # child widgets do not modify parent
+
 
 # global variables
 number_of_process_steps = 1
@@ -223,7 +229,8 @@ root = Tk()
 root.title("Simple IATF Manager")
 
 # ToDo: commented this after adding the file menu since it was not working
-# root.eval("tk::PlaceWindow . center")
+# root.eval("tk::PlaceWindow . center")     # option 1
+
 # x = root.winfo_screenwidth() // 4          # 4: left edge starts from, 1/4 of screen width
 # y = int(root.winfo_screenheight() * 0.2)    # top edge starts from 20% of screen height
 # root.geometry('500x600+' + str(x) + '+' + str(y))
@@ -278,7 +285,7 @@ frame1.place(x=345, y=450)
 # -------------------------------------------------------------------------------#
 
 # color picker button
-color_picker_button = Button(root, text='colorpicker', command=color_chooser_func)
+color_picker_button = Button(root, text='colorpicker', command=color_chooser_func, cursor='hand2')
 color_picker_button.place(x=350, y=25)
 
 
