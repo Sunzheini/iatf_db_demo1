@@ -2,6 +2,7 @@
 IATF16949 DATABASE DEMO
 
 31.10.2022
+ToDo: read excel as a default database
 
 ToDo: направих тест и грид работи във фрейм
 ToDo: дали фогурите от флоучарта да са картинка наслагани (compound) в/у текста в гутийката
